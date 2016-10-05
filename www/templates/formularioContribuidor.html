@@ -1,0 +1,42 @@
+<ion-view title="Formulario Contribuidor" id="page13" style="background-color:#D8E9D5;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Atras&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-nav-back-button>
+  </ion-nav-bar>
+    <ion-content padding="true" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+        <h3 id="contribuidor-heading3" style="color:#FFF;text-align:center;">Ingrese los datos solicitados en el formulario</h3>
+        <span ng-show="form.nombre.$error.required"><code>El campo Nombre es Obligatorio</code></span><br>
+        <span ng-show="form.apellido.$error.required"><code>El campo Apellido es Obligatorio</code></span><br>
+        <span ng-show="form.correo.$error.required"><code>El campo Correo es Obligatorio</code></span><br>
+        <span ng-show="form.telefono.$error.required"><code>El campo Telefono es Obligatorio</code></span>
+        <form id="contribuidor-form9" name="form" class="list">
+          <div class="input">
+            <label class="item item-input" id="contribuidor-input2" name="nombreC">
+                <span class="input-label">Nombre</span>
+                <input name="nombre" id= "nombre" ng-model="datos.NOMBRE" class="form-control" ng-minlength="3" type="text" placeholder="Digite su nombre" required>
+            </label>
+          </div>
+          <div>
+            <div>
+              <label class="item item-input" id="contribuidor-input3" name="apellidoC">
+                  <span class="input-label">Apellido</span>
+                  <input name="apellido" id= "apellido" ng-model="datos.APELLIDO"  class="form-control" type="text" placeholder="Digite su apellido" required>
+              </label>
+          </div>
+          <div>
+            <label class="item item-input" id="contribuidor-input4" name="correoC">
+                <span class="input-label">Correo</span>
+                <input name="correo" id= "correo" ng-model="datos.CORREO"  class="form-control" type="email" placeholder="ejemplo@email.com" required>
+            </label>
+          </div>
+          <div>
+            <label class="item item-input" id="contribuidor-input5">
+                <span class="input-label">Telefono</span>
+                <input name="telefono" id= "telefono" ng-model="datos.TELEFONO" type="number" class="form-control" min="0" placeholder="Teclee su # Telefonico" required>
+            </label>
+          </div>
+          <div>
+            <a ng-click="guardar(datos)" ng-disabled="form.$invalid" id="contribuidor-btn" type="submit"class="button button-balanced  button-block icon-right ion-android-arrow-dropright-circle">Siguiente</a>
+          </div>
+        </form>
+    </ion-content>
+</ion-view>

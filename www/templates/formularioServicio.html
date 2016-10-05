@@ -1,0 +1,31 @@
+<ion-view title="Datos del Servicio" id="page14" style="background-color:#D8E9D5;">
+  <ion-nav-bar class="bar-positive">
+  </ion-nav-bar>
+    <ion-content padding="true" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+      <h2 id="contribuidor-heading3" style="color:#FFF;text-align:center;">Ingrese los datos del Servico</h2>
+      <span ng-show="form.DESCRIPCION.$error.required"><code>El campo Descripcion es requerido</code></span><br>
+      <span ng-show="form.TELEFONO.$error.required"><code>El campo Telefono es requerido</code></span><br>
+      <span ng-show="form.NOMBRE_RESPONSABLE.$error.required"><code>El campo Responsable es requerido</code></span><br>
+      <span ng-show="form.HORARIO.$error.required"><code>El campo Horario es requerido</code></span>
+        <form id="datosDelServicio-form11" class="list" name="form">
+            <label class="item item-input" id="datosDelServicio-input6" name="descripcion">
+                <span class="input-label">Descripcion</span>
+                <input name="DESCRIPCION" ng-model="datos.DESCRIPCION" class="form-control" type="text" placeholder="Nombre del Servicio" required>
+            </label>
+            <label class="item item-input" id="datosDelServicio-input8" name="telefono">
+                <span class="input-label">Telefono</span>
+                <input name="TELEFONO" ng-model="datos.TELEFONO" class="form-control" type="number" min="0" placeholder="Teclee # de telefono" required>
+            </label>
+            <label class="item item-input" id="datosDelServicio-input9" name="nombre_responsable">
+                <span class="input-label">Responsable</span>
+                <input name="NOMBRE_RESPONSABLE" ng-model="datos.NOMBRE_RESPONSABLE" type="text" class="form-control" placeholder="Nombre del Medico" required>
+            </label>
+            <label class="item item-input" id="datosDelServicio-input10" name="horario">
+                <span class="input-label">Horario</span>
+                <input name="HORARIO" ng-model="datos.HORARIO" class="form-control"type="text" placeholder="Ej: 8 Horas" required>
+            </label>
+        <a href="#/servicios/{{idUS}}"  ng-click="guardar(datos)" style="font-weight:300;border-radius:50px 50px 50px 50px;" ng-disabled="form.$invalid" id="datosDelServicio-button11" class="button button-balanced  button-block icon-right ion-android-send">Enviar</a>
+      </form>
+      <button ng-click="eliminarC();" id="datosDelServicio-button11" style="font-weight:300;border-radius:50px 50px 50px 50px;" class="button button-assertive  button-block icon-right ion-close-circled">Cancelar</button>
+    </ion-content>
+</ion-view>

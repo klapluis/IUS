@@ -1,0 +1,20 @@
+<ion-view title="Areas de Especialidad" id="page4" style="background-color:#D8E9D5;">
+  <ion-nav-bar class="bar-calm">
+    <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Atras&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-nav-back-button>
+  </ion-nav-bar>
+      <ion-content padding="true" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+        <ion-list id="areasDeEspecialidad-list5">
+          <div class="item item-divider calm">
+            Lista de Áreas de Especialidad
+          </div>
+            <ion-item ng-repeat="nombres in especialidad" class="item-icon-right balanced" id="areasDeEspecialidad-list-item7" href="#/informacionAE/{{nombres.IDAREA_ESPECIALIDAD}}">
+              {{nombres.NOMBRE}}
+                <i class="icon ion-android-arrow-dropright-circle"></i>
+            </ion-item>
+            <ion-item ng-if="especialidad == null " class="item-icon-right balanced" id="areasDeEspecialidad-list-item7">
+              <strong>No existen resultados</strong>
+                <i class="icon ion-close-circled"></i>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

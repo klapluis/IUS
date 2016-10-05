@@ -1,0 +1,17 @@
+<div ng-controller="mapsCtrl as vm">
+<ion-view title="Maps" id="page2" style="background-color:#D8E9D5;">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-buttons side="left">
+      <button class="button-icon icon ion-ios-arrow-back" ng-click="atras();">
+        Atras&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </button>
+  </ion-nav-bar>
+      <ion-content padding="true" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+        <form id="maps-form5" class="list" ng-click="filtrar(datos)">
+          <ion-radio id="maps-radio1" style="font-size:20px;border-radius:50px 50px 50px 50px;" class="calm" ng-model="datos.id" value="1">Publicas</ion-radio>
+          <ion-radio id="maps-radio2" style="font-size:20px;border-radius:50px 50px 50px 50px;" class="calm" ng-model="datos.id" value="2">Privadas</ion-radio>
+        </form>
+        <div id="map"></div>
+    </ion-content>
+</ion-view>
+</div>

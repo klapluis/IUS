@@ -1,0 +1,117 @@
+<ion-view title="Unidad de Salud" id="page3" style="background-color:#D8E9D5;">
+  <ion-nav-bar class="bar-calm">
+    <ion-nav-buttons side="left">
+      <button class="button-icon icon ion-ios-arrow-back" ng-click="atras();">
+        Atras
+      </button>
+  </ion-nav-bar>
+  <ion-content padding="true" ng-repeat=" data in datos" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+      <h2 id="informaciNUnidadDeSalud-heading5" style="color:#FFF;text-align:center;" class="ic-selected" data-componentid="heading5">{{data.NOMBRE_OFICIAL}}</h2>
+      <div>
+          <a style="display:block;" href="tel:">
+              <img src="http://sius.tigrimigri.com/{{data.FOTO}}" width="50%" height="30%" style="display: block; margin-left: auto; margin-right: auto;">
+          </a>
+      </div>
+        <div class="">
+            <br>
+            <style type="text/css">
+              table {
+                width: 100%;
+              }
+              th, td {
+                width: 25%;
+                text-align: center;
+                vertical-align: top;
+                border-collapse: collapse;
+                padding: 0.3em;
+                caption-side: bottom;
+                color: #fff;
+              }
+              .caption {
+                padding: 0.3em;
+                color: #fff;
+                background: #3dcc6c;
+              }
+              th {
+                background: #eee;
+              }
+            </style>
+            <table class="">
+                <tbody>
+                    <tr>
+                        <td class="caption">&nbsp;Telefóno</td>
+                        <td class="caption">&nbsp;Parroquía</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;{{data.TELEFONO}}</td>
+                        <td>&nbsp;{{data.PARROQUIA}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="">
+                <tbody>
+                    <tr>
+                        <td class="caption">&nbsp;Tipologia</td>
+                        <td class="caption">&nbsp;Atención</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;{{data.TIPOLOGIA}}</td>
+                        <td>&nbsp;{{data.NIVEL_ATENCION}}</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+            <br>
+            <table class="">
+                <tbody>
+                    <tr>
+                        <td class="caption">&nbsp;Dirección</td>
+                        <td class="caption">&nbsp;Lucro</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;{{data.DIRECCION}}</td>
+                        <td>&nbsp;{{data.LUCRO}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        <div class="bar bar-balanced">
+          <h1 class="title">Área: {{data.NOMBRE_AE}}</h1>
+        </div><br><br>
+        <div class="">
+            <br>
+            <table class="">
+                <tbody>
+                    <tr>
+                        <td class="caption">&nbsp;Especialidad</td>
+                        <td class="caption">&nbsp;Numero Telefonmico</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;{{data.NOMBRE}}</td>
+                        <td>&nbsp;{{data.TELEFONO_AE}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="">
+                <tbody>
+                    <tr>
+                        <td class="caption">&nbsp;HORARIO ATENCION</td>
+                        <td class="caption">&nbsp;DIAS ATENCION</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;{{data.HORARIO_ATENCION}}</td>
+                        <td>&nbsp;{{data.DIAS_ATENCION}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--
+        <div class="tabs-striped tabs-color-balanced">
+          <div class="tabs">
+          <button class="btn tab-item active">
+            <i class="icon ion-ios-telephone"></i>
+          </button>
+        </div>
+      </div>
+    -->
+    </ion-content>
+</ion-view>

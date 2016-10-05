@@ -1,0 +1,47 @@
+<ion-view title='Información Especialidad <i class="ion-medkit"></i>' id="page5" style="background-color:#D8E9D5;">
+  <ion-nav-bar class="bar-calm">
+    <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Atras&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content padding="true" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+      <div class="list">
+        <div class="item item-divider calm">
+          Lista de Especialidades
+        </div>
+        <div class="item item-balanced" ng-repeat="nombres in especialidad" style="background: url(img/fondo.jpg) no-repeat center;">
+          <h2 class="caption">{{nombres.NOMBRE}}</h2>
+          <p class="titulo"><label class="caption">Telefono:</label>
+          <label>{{nombres.TELEFONO}}</label></p>
+          <h3 class="caption">Atención</h3>
+          <p class="titulo"><label class="caption">Horas:</label>
+          <label>{{nombres.HORARIO_ATENCION}}</label></p>
+          <p class="titulo"><label class="caption">Dias:</label>
+          <label>{{nombres.DIAS_ATENCION}}</label></p>
+        </div>
+        <ion-item ng-if="especialidad == null " class="item-icon-right balanced" id="areasDeEspecialidad-list-item7">
+          <strong>No existen resultados</strong>
+            <i class="icon ion-close-circled"></i>
+        </ion-item>
+          <style type="text/css">
+          .titulo{
+            width: 100%;
+            text-align: left;
+            vertical-align: top;
+            border-collapse: collapse;
+            padding: 0.3em;
+            caption-side: bottom;
+            color: #fff;
+          }
+          label{
+              color: white;
+          }
+          .caption {
+              text-align: center;
+              padding: 0.3em;
+              color: #fff;
+              background: #11c1f3;
+          }
+
+        </style>
+      </div>
+    </ion-content>
+</ion-view>
