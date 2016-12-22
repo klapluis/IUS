@@ -1,0 +1,63 @@
+<ion-view title='Información Especialidad' id="page5" style="background-color:#FFF;">
+    <ion-nav-bar class="bar">
+        <ion-nav-back-button class="color button-icon icon ion-arrow-left-c">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <style type="text/css">
+        .bar{
+          background-color: #00897B;
+          color: #FFF;
+        }
+        .color{ color: #FFF; }
+    </style>
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div class="list">
+            <div class="item item-divider">
+                Lista de Especialidades
+            </div>
+            <div class="list card"  ng-repeat="nombres in especialidad" >
+                <div class="item item-icon-left bar">
+                    <i class="icon ion-medkit"></i>
+                    <h2 class="title"><strong>{{nombres.NOMBRE}}</strong></h2>
+                </div>
+                <div class="item item-body item-dark">
+                    <p><label class="caption">Telefono:</label>
+                        <label ng-if="nombres.TELEFONO == ''" class="titulo">No hay numero telefónico</label>
+                        <label ng-if="nombres.TELEFONO != ''" class="titulo">{{nombres.TELEFONO}}</label></p>
+                    <h3 class="caption">Atención</h3>
+                    <p><label class="caption">Horas:</label>
+                        <label class="titulo">{{nombres.HORARIO_ATENCION}}</label></p>
+                    <p><label class="caption">Dias:</label>
+                        <label class="titulo">{{nombres.DIAS_ATENCION}}</label></p>
+                </div>
+            </div>
+            <ion-item ng-if="especialidad == null" class="item-icon-right balanced" id="areasDeEspecialidad-list-item7">
+                <strong>No existen resultados</strong>
+                <i class="icon ion-close-circled"></i>
+            </ion-item>
+            <style type="text/css">
+                h2{ color: #FFF; }
+                .bar{
+                  background-color: #00897B;
+                  color: #FFF;
+                }
+                p{
+                  background: #FFF;
+                }
+                .titulo{
+                  text-align: center;
+                  color:#000;
+                  font-weight: bold;
+                }
+                .caption {
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 0.3em;
+                    background: #00897B;
+                    color: #FFF;
+                }
+            </style>
+        </div>
+    </ion-content>
+</ion-view>

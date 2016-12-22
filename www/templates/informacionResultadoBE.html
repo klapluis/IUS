@@ -1,50 +1,56 @@
-<ion-view title="Unidad de Salud" id="page3" style="background-color:#D8E9D5;">
-  <ion-nav-bar class="bar-calm">
-    <ion-nav-buttons side="left">
-      <button class="button-icon icon ion-ios-arrow-back" ng-click="atras();">
-        Atras
-      </button>
-  </ion-nav-bar>
-  <ion-content padding="true" ng-repeat=" data in datos" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
-      <h2 id="informaciNUnidadDeSalud-heading5" style="color:#FFF;text-align:center;" class="ic-selected" data-componentid="heading5">{{data.NOMBRE_OFICIAL}}</h2>
-      <div>
-          <a style="display:block;" href="tel:">
-              <img src="http://sius.tigrimigri.com/{{data.FOTO}}" width="50%" height="30%" style="display: block; margin-left: auto; margin-right: auto;">
-          </a>
-      </div>
+<ion-view title="Unidad de Salud" id="page3" style="background-color:#FFF;">
+    <ion-nav-bar class="bar">
+        <ion-nav-buttons side="left">
+            <button class="button-icon icon ion-arrow-left-c" ng-click="atras();">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+    </ion-nav-bar>
+     </style>
+    <ion-content padding="true" ng-repeat=" data in datos"  class="manual-ios-statusbar-padding">
+        <h2 id="informaciNUnidadDeSalud-heading5" style="color:#000;text-align:center;" class="ic-selected" data-componentid="heading5">{{data.NOMBRE_OFICIAL}}</h2>
+        <div>
+            <a style="display:block;" href="tel:">
+                <img src="https://sius.000webhostapp.com/{{data.FOTO}}" width="70%" height="50%" style="display: block; margin-left: auto; margin-right: auto;">
+            </a>
+        </div>
         <div class="">
             <br>
             <style type="text/css">
-              table {
-                width: 100%;
-              }
-              th, td {
-                width: 25%;
-                text-align: center;
-                vertical-align: top;
-                border-collapse: collapse;
-                padding: 0.3em;
-                caption-side: bottom;
-                color: #fff;
-              }
-              .caption {
-                padding: 0.3em;
-                color: #fff;
-                background: #3dcc6c;
-              }
-              th {
-                background: #eee;
-              }
+                .bar{
+                  background-color: #00897B;
+                  color: #FFF;
+                }
+                .title{
+                  color: #FFF;
+                }
+                table {
+                    width: 100%;
+                }
+                th, td {
+                    width: 50%;
+                    text-align: center;
+                    vertical-align: top;
+                    border-collapse: collapse;
+                    padding: 0.3em;
+                    caption-side: bottom;
+                    color: #000;
+                    font-weight: bold;
+                }
+                .caption {
+                    padding: 0.3em;
+                    color: #FFF;
+                    background: #00897B;
+                }
             </style>
             <table class="">
                 <tbody>
                     <tr>
                         <td class="caption">&nbsp;Telefóno</td>
-                        <td class="caption">&nbsp;Parroquía</td>
+                        <td class="caption">&nbsp;Provincia</td>
                     </tr>
                     <tr>
                         <td>&nbsp;{{data.TELEFONO}}</td>
-                        <td>&nbsp;{{data.PARROQUIA}}</td>
+                        <td>&nbsp;{{data.PROVINCIA}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -60,22 +66,22 @@
                     </tr>
                 </tbody>
             </table>
-          </div>
-            <br>
-            <table class="">
-                <tbody>
-                    <tr>
-                        <td class="caption">&nbsp;Dirección</td>
-                        <td class="caption">&nbsp;Lucro</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;{{data.DIRECCION}}</td>
-                        <td>&nbsp;{{data.LUCRO}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        <div class="bar bar-balanced">
-          <h1 class="title">Área: {{data.NOMBRE_AE}}</h1>
+        </div>
+        <br>
+        <table class="">
+            <tbody>
+                <tr>
+                    <td class="caption">&nbsp;Dirección</td>
+                    <td class="caption">&nbsp;Lucro</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;{{data.DIRECCION}}</td>
+                    <td>&nbsp;{{data.LUCRO}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="bar">
+            <h1 class="title ">Área: {{data.NOMBRE_AE}}</h1>
         </div><br><br>
         <div class="">
             <br>
@@ -86,8 +92,8 @@
                         <td class="caption">&nbsp;Numero Telefonmico</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;{{data.NOMBRE}}</td>
-                        <td>&nbsp;{{data.TELEFONO_AE}}</td>
+                        <td>&nbsp;{{data.NOMBRE_ESPECIALIDAD}}</td>
+                        <td>&nbsp;{{data.TELEFONO_ESPECIALIDAD}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -104,14 +110,5 @@
                 </tbody>
             </table>
         </div>
-        <!--
-        <div class="tabs-striped tabs-color-balanced">
-          <div class="tabs">
-          <button class="btn tab-item active">
-            <i class="icon ion-ios-telephone"></i>
-          </button>
-        </div>
-      </div>
-    -->
     </ion-content>
 </ion-view>

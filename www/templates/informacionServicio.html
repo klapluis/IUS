@@ -1,66 +1,57 @@
-<ion-view title="Servicios" id="page7" style="background-color:#D8E9D5;">
-  <ion-nav-bar class="bar-positive">
-    <ion-nav-buttons side="left">
-      <button class="button-icon icon ion-ios-arrow-back" ng-click="atras();">
-        Atras&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </button>
-  </ion-nav-bar>
-  <ion-content padding="true" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
-        <a href="#/contribuidor/{{id}}" id="servicios-button9" style="font-weight:300;border-radius:50px 50px 50px 50px;" class="button button-calm  button-block icon-right ion-android-add-circle">Nuevo Servicios</a>
+<ion-view title="Servicios" id="page7" style="background-color:#FFF;">
+    <ion-nav-bar class="bar">
+        <ion-nav-buttons side="left">
+            <button class="button-icon icon icon ion-arrow-left-c" ng-click="atras();">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>
+    </ion-nav-bar>
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <a href="#/contribuidor/{{id}}" id="servicios-button9" style="color: #fff; font-weight:500;border-radius:50px 50px 50px 50px;" class="button bar button-block icon-right ion-android-add-circle">Nuevo Servicios</a>
         <div class="list">
-          <div class="item item-divider">
-              <strong>Lista de Servicios</strong>
-          </div>
-          <div class="item" ng-repeat="nombres in servicios" style="background: url(img/fondo.jpg) no-repeat center;">
-            <h2 class="titulo">{{nombres.DESCRIPCION}}</h2>
-            <p><label class="caption">Telefono:</label>
-            <label>{{nombres.TELEFONO}}</label></p>
-            <p><label class="caption">Responsable:</label>
-            <label>{{nombres.NOMBRE_RESPONSABLE}}</label></p>
-            <p><label class="caption">Horario:</label>
-            <label>{{nombres.HORARIO}}</label></p>
-          </div><br>
-          <a ng-if="servicios == null " class="item item-icon-left balanced">
-            <i class="icon ion-close-circled"></i>
-              <strong>No existen resultados</strong>
-          </a>
+            <div class="item item-divider">
+                <strong>Lista de Servicios</strong>
+            </div>
+            <div class="list card"  ng-repeat="nombres in servicios" >
+                <div class="item item-icon-left bar">
+                    <i class="icon ion-medkit"></i>
+                    <h2 class="title"><strong>{{nombres.DESCRIPCION}}</strong></h2>
+                </div>
+                <div class="item item-body item-dark">
+                    <p><label class="caption">Telefono:</label>
+                        <label class="titulo">{{nombres.TELEFONO}}</label></p>
+                    <p><label class="caption">Responsable:</label>
+                        <label class="titulo">{{nombres.NOMBRE_RESPONSABLE}}</label></p>
+                    <p><label class="caption">Horario:</label>
+                        <label class="titulo">{{nombres.HORARIO}}</label></p>
+                </div>
+            </div>
+            <br>
+            <a ng-if="servicios == null" class="item item-icon-left">
+                <i class="icon ion-close-circled"></i>
+                <strong>No existen resultados</strong>
+            </a>
         </div>
         <style type="text/css">
-        .titulo{
-          width: 100%;
-          text-align: center;
-          vertical-align: top;
-          border-collapse: collapse;
-          padding: 0.3em;
-          caption-side: bottom;
-          color: #fff;
-          background: #11c1f3;
-        }
-          table {
-            width: 100%;
-          }
-          label{
-            color: white;
-          }
-          th, td {
-            width: 25%;
-            text-align: center;
-            vertical-align: top;
-            border-collapse: collapse;
-            padding: 0.3em;
-            caption-side: bottom;
-            color: #fff;
-          }
-          .caption {
-            text-align: center;
-            padding: 0.3em;
-            color: #fff;
-            background: #11c1f3;
-            width: 33%;
-          }
-          th {
-            background: #eee;
-          }
+            h2{ color: #FFF; }
+            .bar{
+              background-color: #00897B;
+              color: #FFF;
+            }
+            p{
+              background: #FFF;
+            }
+            .titulo{
+              text-align: center;
+              color:#000;
+              font-weight: bold;
+            }
+            .caption {
+                font-weight: bold;
+                text-align: center;
+                padding: 0.3em;
+                background: #00897B;
+                color: #FFF;
+            }
         </style>
     </ion-content>
 </ion-view>

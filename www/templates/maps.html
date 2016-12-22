@@ -1,17 +1,31 @@
 <div ng-controller="mapsCtrl as vm">
-<ion-view title="Maps" id="page2" style="background-color:#D8E9D5;">
-  <ion-nav-bar class="bar-positive">
-    <ion-nav-buttons side="left">
-      <button class="button-icon icon ion-ios-arrow-back" ng-click="atras();">
-        Atras&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </button>
-  </ion-nav-bar>
-      <ion-content padding="true" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
-        <form id="maps-form5" class="list" ng-click="filtrar(datos)">
-          <ion-radio id="maps-radio1" style="font-size:20px;border-radius:50px 50px 50px 50px;" class="calm" ng-model="datos.id" value="1">Publicas</ion-radio>
-          <ion-radio id="maps-radio2" style="font-size:20px;border-radius:50px 50px 50px 50px;" class="calm" ng-model="datos.id" value="2">Privadas</ion-radio>
-        </form>
-        <div id="map"></div>
-    </ion-content>
-</ion-view>
+    <ion-view title="Maps" id="page2" style="background-color:#FFFFFF;">
+        <ion-nav-bar class="bar">
+            <ion-nav-buttons side="left">
+                <button class="button-icon icon ion-arrow-left-c" ng-click="atras();">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button ui-sref="buscarUnidadSalud" class="button-icon icon ion-search">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <style type="text/css">
+            .bar{
+              background-color: #00897B;
+              color: #FFF;
+            }
+         </style>
+        <ion-content padding="true" class="manual-ios-statusbar-padding">
+            <div id="maps-form5" class="list">
+                <div class="item range">
+                    <i class="icon ion-ios-people"></i>Público
+                    <input type="range" id="RangeFilter" ng-change="filtrar(datos)" name="points" ng-model="datos.id" style="font-size:20px;border-radius:50px 50px 50px 50px;" class="calm" min="1" max="3" value="2">
+                    <i class="icon ion-social-usd"></i>Privado
+                </div>
+            </div>
+            <div id="map"></div>
+        </ion-content>
+    </ion-view>
 </div>

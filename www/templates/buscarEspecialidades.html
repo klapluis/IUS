@@ -1,32 +1,37 @@
-<ion-view title="Buscar Especialidades " id="page17" style="background-color:#D8E9D5;">
-  <ion-nav-bar class="bar-calm">
-    <ion-nav-buttons side="left">
-      <button class="button-icon icon ion-ios-arrow-back" ui-sref="inicio">
-        Atras
-      </button>
-    </ion-nav-buttons>>
-  </ion-nav-bar>
-    <ion-content padding="true" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
-      <div class="bar bar-header item-input-inset">
-        <label class="item-input-wrapper">
-          <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="search" ng-model="q.buscar" class="" placeholder="Digite la Especialidad" id="buscar">
-        </label>
-        <button class="button button-clear" ng-click="limpiar(q)">
-          Cancel
-        </button>
-      </div>
-      <br>
+<ion-view title="Buscar Especialidad" id="page17" style="background-color:#FFF;">
+    <ion-nav-bar class="bar">
+        <ion-nav-buttons side="left">
+            <button class="button-icon icon ion-arrow-left-c" ui-sref="inicio">
+            </button>
+        </ion-nav-buttons>>
+    </ion-nav-bar>
+    <style type="text/css">
+        .bar{
+          background-color: #00897B;
+          color: #FFF;
+        }
+     </style>
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <div class="item bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" ng-model="q.buscar" class="" placeholder="Digite la Especialidad" id="buscar">
+            </label>
+            <button class="button button-default" ng-click="limpiar(q)">
+                Cancelar
+            </button>
+        </div>
+        <br>
         <ion-list id="areasDeEspecialidad-list5">
-          <div class="item item-divider calm">
-            Lista de Especialidades
-          </div>
-            <ion-item ng-repeat="nombres in especialidad | filter: q.buscar as results" class="item-icon-right balanced" id="areasDeEspecialidad-list-item7" href="#/resultadoBE/{{nombres.NOMBRE}}">
+            <div class="item item-divider">
+                Lista de Especialidades
+            </div>
+            <ion-item ng-repeat="nombres in especialidad| filter: q.buscar as results" class="item-icon-right" id="areasDeEspecialidad-list-item7" href="#/resultadoBE/{{nombres.NOMBRE}}">
                 {{nombres.NOMBRE}}
                 <i class="icon ion-android-arrow-dropright-circle"></i>
             </ion-item>
-            <ion-item ng-if="results.length == 0 " class="item-icon-right balanced" id="areasDeEspecialidad-list-item7">
-              <strong>No existen resultados</strong>
+            <ion-item ng-if="results.length == 0" class="item-icon-right" id="areasDeEspecialidad-list-item7">
+                <strong>No existen resultados</strong>
                 <i class="icon ion-close-circled"></i>
             </ion-item>
         </ion-list>

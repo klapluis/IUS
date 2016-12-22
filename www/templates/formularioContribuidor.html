@@ -1,42 +1,58 @@
-<ion-view title="Formulario Contribuidor" id="page13" style="background-color:#D8E9D5;">
-  <ion-nav-bar class="bar-positive">
-    <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Atras&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-nav-back-button>
-  </ion-nav-bar>
-    <ion-content padding="true" style="background: url(img/fondo.jpg) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
-        <h3 id="contribuidor-heading3" style="color:#FFF;text-align:center;">Ingrese los datos solicitados en el formulario</h3>
-        <span ng-show="form.nombre.$error.required"><code>El campo Nombre es Obligatorio</code></span><br>
-        <span ng-show="form.apellido.$error.required"><code>El campo Apellido es Obligatorio</code></span><br>
-        <span ng-show="form.correo.$error.required"><code>El campo Correo es Obligatorio</code></span><br>
-        <span ng-show="form.telefono.$error.required"><code>El campo Telefono es Obligatorio</code></span>
-        <form id="contribuidor-form9" name="form" class="list">
-          <div class="input">
-            <label class="item item-input" id="contribuidor-input2" name="nombreC">
-                <span class="input-label">Nombre</span>
-                <input name="nombre" id= "nombre" ng-model="datos.NOMBRE" class="form-control" ng-minlength="3" type="text" placeholder="Digite su nombre" required>
-            </label>
-          </div>
-          <div>
-            <div>
-              <label class="item item-input" id="contribuidor-input3" name="apellidoC">
-                  <span class="input-label">Apellido</span>
-                  <input name="apellido" id= "apellido" ng-model="datos.APELLIDO"  class="form-control" type="text" placeholder="Digite su apellido" required>
-              </label>
-          </div>
-          <div>
-            <label class="item item-input" id="contribuidor-input4" name="correoC">
-                <span class="input-label">Correo</span>
-                <input name="correo" id= "correo" ng-model="datos.CORREO"  class="form-control" type="email" placeholder="ejemplo@email.com" required>
-            </label>
-          </div>
-          <div>
-            <label class="item item-input" id="contribuidor-input5">
-                <span class="input-label">Telefono</span>
-                <input name="telefono" id= "telefono" ng-model="datos.TELEFONO" type="number" class="form-control" min="0" placeholder="Teclee su # Telefonico" required>
-            </label>
-          </div>
-          <div>
-            <a ng-click="guardar(datos)" ng-disabled="form.$invalid" id="contribuidor-btn" type="submit"class="button button-balanced  button-block icon-right ion-android-arrow-dropright-circle">Siguiente</a>
-          </div>
+<ion-view title="Formulario Contribuidor" id="page13" style="background-color:#FFF;">
+    <ion-nav-bar class="bar">
+        <ion-nav-back-button class=" color button-icon icon ion-arrow-left-c">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-nav-back-button>
+    </ion-nav-bar>
+    <style type="text/css">
+        .bar{
+          background-color: #00897B;
+          color: #FFF;
+        }
+        .color{ color: #FFF; }
+    </style>
+    <ion-content padding="true" class="manual-ios-statusbar-padding">
+        <h3 id="contribuidor-heading3" style="color:#000;text-align:center;">Ingrese los datos solicitados en el formulario</h3>
+        <br><br>
+        <form id="form" name="form" class="list">
+            <div class="input">
+                <label class="item item-input" id="contribuidor-input2" name="nombreC">
+                    <span class="input-label">Nombre</span>
+                    <input name="nombre" id= "nombre" ng-pattern="/^[a-zA-Z\s]*$/" ng-minlength="4" ng-model="datos.NOMBRE" class="form-control" ng-minlength="3" type="text" placeholder="Digite su nombre" required>
+                </label>
+            </div>
+            <span class="form-error" ng-show="form.nombre.$error.required"><code>El campo Nombre es Obligatorio</code><br></span>
+            <span class="form-error" ng-show="form.nombre.$error.minlength"><code>Debe tener más de 4 caracteres</code><br></span>
+            <span class="form-error" ng-show="form.nombre.$error.pattern"><code>Debe tener solo letras</code><br></span>
+                <div>
+                    <label class="item item-input" id="contribuidor-input3" name="apellidoC">
+                        <span class="input-label">Apellido</span>
+                        <input name="apellido" id= "apellido" ng-minlength="5" ng-pattern="/^[a-zA-Z\s]*$/" ng-model="datos.APELLIDO"  class="form-control" type="text" placeholder="Digite su apellido" required>
+                    </label>
+                </div>
+                <span class="form-error" ng-show="form.apellido.$error.required"><code>El campo Apellido es Obligatorio</code><br></span>
+                <span class="form-error" ng-show="form.apellido.$error.minlength"><code>Debe tener más de 5 caracteres</code><br></span>
+                <span class="form-error" ng-show="form.apellido.$error.pattern"><code>Debe tener solo letras</code><br></span>
+                <div>
+                    <label class="item item-input" id="contribuidor-input4" name="correoC">
+                        <span class="input-label">Correo</span>
+                        <input name="correo" id= "correo" ng-minlength="7" ng-model="datos.CORREO"  class="form-control" type="email" placeholder="ejemplo@email.com" required>
+                    </label>
+                </div>
+                <span class="form-error" ng-show="form.correo.$error.required"><code>El campo Correo es Obligatorio</code><br></span>
+                <span class="form-error" ng-show="form.correo.$invalid && !form.correo.$pristine"><code>Debe ser un correo electrónico</code><br></span>
+                <span class="form-error" ng-show="form.correo.$error.minlength"><code>Debe tener más de 7 caracteres</code><br></span>
+                <div>
+                    <label class="item item-input" id="contribuidor-input5">
+                        <span class="input-label">Telefono</span>
+                        <input name="telefono" id= "telefono" ng-pattern="/^[1-9]+[0-9]*$/"ng-minlength="10" ng-maxlength="13"ng-model="datos.TELEFONO" type="number" class="form-control" min="0" placeholder="Teclee su # Telefonico" required>
+                    </label>
+                </div>
+                <span class="form-error" ng-show="form.telefono.$error.required"><code>El campo Telefono es Obligatorio</code><br></span>
+                <span class="form-error" ng-show="form.telefono.$error.maxlength"><code>Debe tener menos de 13 números</code><br></span>
+                <span class="form-error" ng-show="form.telefono.$error.minlength"><code>Debe tener más de 10 números</code><br></span>
+                <span class="form-error" ng-show="form.telefono.$error.pattern"><code>Números no validos</code><br></span>
+                <div>
+                    <a ng-click="guardar(datos)" ng-disabled="form.$invalid" id="contribuidor-btn" type="submit" class="button button-balanced  button-block icon-right ion-android-arrow-dropright-circle">Siguiente</a>
+                </div>
         </form>
     </ion-content>
 </ion-view>
